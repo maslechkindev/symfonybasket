@@ -1,0 +1,10 @@
+Product:
+    resource: "@ProductBundle/Resources/config/routing.yml"
+    prefix:   /
+
+basket:
+    resource: "@BasketBundle/Resources/config/routing.yml"
+    prefix:   /basket
+
+
+
