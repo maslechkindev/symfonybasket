@@ -1,0 +1,5 @@
+basket_index:
+    path:     /
+    defaults: { _controller: BasketBundle:Basket:index }
+    requirements:
+             methods:  GET
