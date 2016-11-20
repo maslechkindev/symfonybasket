@@ -109,4 +109,28 @@ class Order
     {
         return $this->basket;
     }
+
+    /**
+     * Set productId
+     *
+     * @param integer $productId
+     *
+     * @return Order
+     */
+    public function setProductId($productId)
+    {
+        $this->productId = $productId;
+
+        return $this;
+    }
+
+    /**
+     * Get productId
+     *
+     * @return integer
+     */
+    public function getProductId()
+    {
+        return $this->productId;
+    }
 }

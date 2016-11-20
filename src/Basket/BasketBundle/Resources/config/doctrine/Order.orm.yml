@@ -17,14 +17,9 @@ Basket\BasketBundle\Entity\Order:
       nullable: true
       options:
           default: CURRENT_TIMESTAMP
-
-  oneToOne:
-    product:
-      targetEntity: Product
-      inversedBy: product
-      joinColumn:
-        name: productId
-        referencedColumnName: id
+    productId:
+      type: integer
+      nullabble: false
 
   oneToOne:
       basket:

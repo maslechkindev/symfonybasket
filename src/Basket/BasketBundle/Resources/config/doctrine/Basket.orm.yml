@@ -6,11 +6,11 @@ Basket\BasketBundle\Entity\Basket:
     id:
       type: integer
       generator: {strategy: AUTO}
-
-        oneToOne:
-          order:
-            targetEntity: Order
-            mappedBy: basket
+#
+#        oneToOne:
+#          order:
+#            targetEntity: Order
+#            mappedBy: basket
 
   fields:
     price:

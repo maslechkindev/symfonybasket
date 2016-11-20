@@ -23,7 +23,3 @@ Product\ProductBundle\Entity\Product:
       nullable: true
       options:
           default: CURRENT_TIMESTAMP
-    oneToOne:
-      order:
-        targetEntity: Order
-        mappedBy: product
