@@ -1,0 +1,21 @@
+<?php
+
+namespace Basket\BasketBundle\Entity;
+
+class Order
+{
+    /** @var  integer */
+    protected $id;
+
+    /** @var  integer */
+    protected $quantity;
+
+    /** @var  integer */
+    protected $basketId;
+
+    /** @var  integer */
+    protected $productId;
+
+    /** @var  string */
+    protected $created;
+}

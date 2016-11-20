@@ -1,0 +1,15 @@
+<?php
+
+namespace Basket\BasketBundle\Entity;
+
+class Basket
+{
+    /** @var  integer */
+    protected $id;
+
+    /** @var  float */
+    protected $price;
+
+    /** @var  string */
+    protected $created;
+}

@@ -1,0 +1,19 @@
+<?php
+
+namespace Product\ProductBundle\Entity;
+
+class Product
+{
+    /** @var  integer */
+    protected $id;
+    /** @var  string */
+    protected $name;
+    /** @var  string */
+    protected $description;
+    /** @var  float */
+    protected $amount;
+    /** @var  integer */
+    protected $count;
+    /** @var  string */
+    protected $created;
+}

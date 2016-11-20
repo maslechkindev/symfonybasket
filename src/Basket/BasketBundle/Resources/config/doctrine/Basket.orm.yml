@@ -1,0 +1,23 @@
+#src/Basket/BasketBundle/Resources/config/doctrine/Basket.orm.yml
+Basket\BasketBundle\Entity\Basket:
+  type: entity
+  table: basket
+  id:
+    id:
+      type: integer
+      generator: {strategy: AUTO}
+
+        oneToOne:
+          order:
+            targetEntity: Order
+            mappedBy: basket
+
+  fields:
+    price:
+      type: float
+      nullable: false
+    created:
+      type: datetime
+      nullable: true
+      options:
+          default: CURRENT_TIMESTAMP

@@ -1,0 +1,27 @@
+#src/Product/ProductBundle/Resources/config/doctrine/Tax.orm.yml
+Product\ProductBundle\Entity\Tax:
+  type: entity
+  table: tax
+  id:
+    id:
+      type: integer
+      generator: {strategy: AUTO}
+  fields:
+    name:
+      type: string
+      length: 100
+    value:
+      type: integer
+      length: 100
+    created:
+      type: datetime
+      nullable: true
+      options:
+          default: CURRENT_TIMESTAMP
+
+  oneToOne:
+      country:
+        targetEntity: Country
+        joinColumn:
+          name: countryId
+          referencedColumnName: id

@@ -1,0 +1,17 @@
+#src/Product/ProductBundle/Resources/config/doctrine/Country.orm.yml
+Product\ProductBundle\Entity\Country:
+  type: entity
+  table: country
+  id:
+    id:
+      type: integer
+      generator: {strategy: AUTO}
+  fields:
+    name:
+      type: string
+      length: 100
+    created:
+      type: datetime
+      nullable: true
+      options:
+          default: CURRENT_TIMESTAMP

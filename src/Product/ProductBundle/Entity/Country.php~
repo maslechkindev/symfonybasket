@@ -1,0 +1,13 @@
+<?php
+
+namespace Product\ProductBundle\Entity;
+
+class Country
+{
+    /** @var  integer */
+    protected $id;
+    /** @var  string */
+    protected $name;
+    /** @var  string */
+    protected $created;
+}

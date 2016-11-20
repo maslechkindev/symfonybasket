@@ -1,0 +1,17 @@
+<?php
+
+namespace Product\ProductBundle\Entity;
+
+class Tax
+{
+    /** @var  integer */
+    protected $id;
+    /** @var  string */
+    protected $name;
+    /** @var  integer */
+    protected $value;
+    /** @var  string */
+    protected $countryId;
+    /** @var  string */
+    protected $created;
+}
