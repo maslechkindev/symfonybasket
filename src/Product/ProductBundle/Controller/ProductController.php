@@ -21,22 +21,20 @@ class ProductController extends Controller
 
         $products = $em->getRepository('ProductBundle:Product')->findAll();
         $countries = $em->getRepository('ProductBundle:Country')->findAll();
-//        $taxes = $em->getRepository('ProductBundle:Country')->findBy([
-//            'countryId' => !empty($request->request->get('countryId')) ?
-//                $request->request->get('countryId') : self::DEFAULT_COUNTRY
-//        ]);
+        $taxes = $em->getRepository('ProductBundle:Country')->findBy([
+            'countryId' => !empty($request->request->get('countryId')) ?
+                $request->request->get('countryId') : self::DEFAULT_COUNTRY
+        ]);
         return $this->render('ProductBundle:Product:list.html.twig', array(
             'products' => $products,
             'countries' => $countries,
-//            'taxes' => $taxes,
+            'taxes' => $taxes,
         ));
     }
 
     public function getCountryAction(Request $request)
     {
 //var_dump(!empty($request->request->get('countryId')) ? $request->request->get('countryId') : self::DEFAULT_COUNTRY);
-        echo 5;die;
-        //die();
 
     }
 }
