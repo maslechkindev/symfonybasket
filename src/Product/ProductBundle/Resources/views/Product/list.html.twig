@@ -7,6 +7,8 @@
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="{{ asset('js/product.js') }}"></script>
     {% block stylesheets %}
         <link href='http://fonts.googleapis.com/css?family=Irish+Grover' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=La+Belle+Aurore' rel='stylesheet' type='text/css'>
@@ -19,6 +21,18 @@
 <section id="wrapper">
     <header id="header">
         <div class="top">
+            {% block countries %}
+                <form method="GET" action="{{path('get_country')}}" >
+                    <select id="countryList" name="countryId">
+                        {% for country in countries %}
+                            <option value="{{ country.id }}">{{ country.name }}</option>
+                        {% endfor %}
+                    </select>
+                </form>
+
+
+
+            {% endblock %}
             {% block navigation %}
                 <nav>
                     <ul class="navigation">
@@ -36,7 +50,25 @@
     </header>
 
     <section class="main-col">
-        {% block body %}{% endblock %}
+        {% block body %}
+
+
+            {% for product in products %}
+                <article class="blog">
+                    <header>
+                        <h2>{{ product.name }}</h2>
+                    </header>
+                    <div class="snippet">
+                        <p>{{ product.description(500) }}</p>
+                        <p>Price: ${{ product.amount }}</p>
+                        <button id="button-buy" data-id="{{ product.id }}" data-amount="{{ product.amount }}">Buy now
+                        </button>
+                    </div>
+                </article>
+            {% endfor %}
+
+
+        {% endblock %}
     </section>
     <aside class="sidebar">
         {% block sidebar %}{% endblock %}
@@ -49,6 +81,12 @@
     </div>
 </section>
 
-{% block javascripts %}{% endblock %}
+        {% block javascripts %}
+        <script>
+            initCountry();
+        </script>
+        {% endblock %}
+
+
 </body>
 </html>

@@ -3,3 +3,9 @@ Product_list:
     defaults: { _controller: ProductBundle:Product:list }
     requirements:
              methods:  GET
+
+get_country:
+   path:     /getCountry
+   defaults: { _controller: ProductBundle:Product:getCountry }
+   requirements:
+            methods:  GET

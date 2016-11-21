@@ -109,6 +109,11 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
             return array (  '_controller' => 'Product\\ProductBundle\\Controller\\ProductController::listAction',  '_route' => 'Product_list',);
         }
 
+        // get_country
+        if ($pathinfo === '/getCountry') {
+            return array (  '_controller' => 'Product\\ProductBundle\\Controller\\ProductController::getCountryAction',  '_route' => 'get_country',);
+        }
+
         // basket_index
         if (rtrim($pathinfo, '/') === '/basket') {
             if (substr($pathinfo, -1) !== '/') {
